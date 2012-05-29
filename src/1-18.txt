@@ -1,0 +1,6 @@
+Simple line
+     Line with spaces at the beginning
+Line with spaces at the end
+     Line with spaces all around        
+     				Line with spaces and tabs all around		      			
+                                                       
