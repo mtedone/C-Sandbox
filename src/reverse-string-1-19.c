@@ -18,16 +18,11 @@ int main() {
 
 	char target[MAXLINE];
 
-	while ((read = getLine(source)) >= 0) {
+	while ((read = getLine(source)) > 0) {
 
-		if (read > 0)
-		{
-
-			//Got a line. Now reverse it
-			reverse(read - 1, source, target);
-			printf("Reversed line: %s\n", target);
-
-		}
+		//Got a line. Now reverse it
+		reverse(read - 1, source, target);
+		printf("Reversed line: %s\n", target);
 	}
 
 	return 0;
@@ -41,6 +36,12 @@ int getLine(char sink[]) {
 
 	for (i = 0; i < MAXLINE - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
 		sink[i] = c;
+
+	if (c == '\n')
+	{
+		sink[i] = c;
+		++i;
+	}
 
 	//It closes the array with the null character
 	sink[i] = '\0';
